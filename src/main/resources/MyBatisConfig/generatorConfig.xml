@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="H2-Genre" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="org.h2.Driver"
+                        connectionURL="jdbc:h2:file:./target/testdb;AUTO_SERVER=TRUE"
+                        userId="admin"
+                        password="admin"/>
+
+        <!-- Generuojame POJO klasę Genre -->
+        <javaModelGenerator targetPackage="com.example.uzd1.MyBatis.entities"
+                            targetProject="src/main/java"/>
+
+        <!-- Generuojame XML mapper failą -->
+        <sqlMapGenerator targetPackage="com.example.uzd1.MyBatis.mappers"
+                         targetProject="src/main/resources"/>
+
+        <!-- Generuojame mapper interface su XML pagrindu -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.example.uzd1.MyBatis.mappers"
+                             targetProject="src/main/java"/>
+
+        <!-- Tik Genre lentelė -->
+        <table tableName="genre" domainObjectName="Genre" />
+    </context>
+</generatorConfiguration>
