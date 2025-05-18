@@ -26,7 +26,7 @@ public class Book {
 
     @ManyToMany
     @JoinTable(
-            name = "book_genre", // jungiamoji lentelė
+            name = "book_genre",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
