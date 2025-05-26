@@ -16,7 +16,6 @@ public class BookService {
     @Inject
     private BookDAO bookDao;
 
-    @Inject BookService bookService;
 
     @Transactional
     public void saveBook(Book book){

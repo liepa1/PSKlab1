@@ -20,17 +20,20 @@ public class Book {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name="author_id", nullable = false)
+    @JoinColumn(name="author_id", nullable=false,
+            foreignKey = @ForeignKey(name = "fk_book_author"))
     private Author author;
+
 
 
     @ManyToMany
     @JoinTable(
             name = "book_genre",
-            joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id")
+            joinColumns = @JoinColumn(name = "book_id", foreignKey = @ForeignKey(name = "fk_book_genre_book")),
+            inverseJoinColumns = @JoinColumn(name = "genre_id", foreignKey = @ForeignKey(name = "fk_book_genre_genre"))
     )
     private List<Genre> genres;
+
 
     public Book( ){
 

@@ -4,15 +4,13 @@
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="myPU" transaction-type="JTA">
-        <!-- H2 duomenų šaltinio JNDI pavadinimas -->
-        <jta-data-source>java:/H2DS</jta-data-source>
+        <jta-data-source>java:/lab1</jta-data-source>
 
         <properties>
-            <!-- H2 duomenų bazės nustatymai -->
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <!-- H2 dialektas -->
+
+
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-            <!-- (Nebūtina, bet naudinga debug'ui) -->
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>
